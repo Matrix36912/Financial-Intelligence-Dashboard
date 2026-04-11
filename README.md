@@ -5,6 +5,8 @@ This project analyzes financial statements to evaluate a company’s financial h
 ## Overview
 The analysis focuses on key financial components including working capital, cash flow behavior, capital structure, and asset efficiency.
 
+![Dashboard Preview](preview.png)
+
 ## Key Features
 - Working Capital Analysis (Receivables, Inventory, Cash)
 - Cash Flow Breakdown (Operating, Investing, Financing)
