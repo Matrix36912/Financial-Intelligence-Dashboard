@@ -24,6 +24,5 @@ The project generates a structured dashboard with:
 - Key insights
 - Cash flow forecasts
 
-A sample output is available in the repository (`financial_report.html`).
 ## Dashboard
 [View Dashboard](https://matrix36912.github.io/Financial-Health-Analysis/)
