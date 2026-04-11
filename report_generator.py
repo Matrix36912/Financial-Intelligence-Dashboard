@@ -39,7 +39,7 @@ img {
     border-radius: 6px;
 }
 
-/* 🔥 ONLY CHANGE → PIE SMALL */
+
 .small-pie {
     width: 70% !important;
     display: block;
@@ -85,7 +85,7 @@ Variability in financing suggests changes in funding strategy.
 
 <div class="card">
 <h3>Capital Structure</h3>
-<img src="capital_chart.png" class="small-pie">  <!-- 👈 ONLY CHANGE -->
+<img src="capital_chart.png" class="small-pie">  
 <p class="insight">
 The company is largely equity-funded with minimal reliance on debt, indicating a conservative financial structure and lower risk exposure.
 </p>

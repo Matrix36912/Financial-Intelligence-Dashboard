@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
 
-# ================= LOAD DATA =================
+# Load Data
 df = pd.read_excel("FS.xlsx", header=None)
 
-# ================= BALANCE SHEET =================
+# Balance Sheet
 bs_start = df[df[0] == "BALANCE SHEET"].index[0]
 bs_df = df.iloc[bs_start:]
 
@@ -18,7 +18,7 @@ bs_df = bs_df[bs_df["Metric"] != "Report Date"]
 bs_long = bs_df.melt(id_vars="Metric", var_name="Year", value_name="Value")
 bs_long["Year"] = pd.to_datetime(bs_long["Year"]).dt.year
 
-# ================= WORKING CAPITAL =================
+# Working Capital
 receivables = bs_long[bs_long["Metric"] == "Receivables"]
 inventory = bs_long[bs_long["Metric"] == "Inventory"]
 cash = bs_long[bs_long["Metric"] == "Cash & Bank"]
@@ -38,7 +38,7 @@ wc_df = wc_df.sort_values("Year")
 for col in ["Value_Receivables", "Value_Inventory", "Cash", "Working_Capital"]:
     wc_df[col] = pd.to_numeric(wc_df[col], errors="coerce")
 
-# ================= WORKING CAPITAL VISUAL =================
+# WC Visual
 fig, ax = plt.subplots(figsize=(10, 5))
 
 ax.stackplot(
@@ -67,7 +67,7 @@ ax.grid(alpha=0.3)
 plt.savefig("wc_chart.png")
 plt.close()
 
-# ================= CASH FLOW =================
+# Cash Flow
 cf_start = df[df[0] == "CASH FLOW:"].index[0]
 cf_df = df.iloc[cf_start:]
 
@@ -107,7 +107,7 @@ color_operating = "tab:blue"
 color_investing = "tab:orange"
 color_financing = "tab:purple"
 
-# ================= BARS =================
+# Bars
 ax.bar([i - bar_width for i in x], op_vals, width=bar_width,
        color=color_operating, label="Operating")
 
@@ -117,7 +117,7 @@ ax.bar(x, inv_vals, width=bar_width,
 ax.bar([i + bar_width for i in x], fin_vals, width=bar_width,
        color=color_financing, label="Financing")
 
-# ================= FORECAST (HOLT METHOD ONLY CHANGE) =================
+# Forecast (Holt)
 def holt_forecast(values, periods=2):
     values = np.array(values, dtype=float)
 
@@ -157,7 +157,7 @@ years_extended = years + forecast_years
 ax.set_xticks(range(len(years_extended)))
 ax.set_xticklabels(years_extended)
 
-# Highlight forecast zone
+# Highlighting forecast zone
 ax.axvspan(len(years)-1, len(years_extended)-1, alpha=0.08)
 
 ax.set_title("Cash Flow Breakdown with Forecast")
@@ -169,7 +169,7 @@ ax.grid(alpha=0.3)
 plt.savefig("cashflow_chart.png")
 plt.close()
 
-# ================= CAPITAL STRUCTURE (SMALLER PIE) =================
+# Capital Structure
 equity_share = bs_long[bs_long["Metric"] == "Equity Share Capital"]
 reserves = bs_long[bs_long["Metric"] == "Reserves"]
 borrowings = bs_long[bs_long["Metric"] == "Borrowings"]
@@ -186,8 +186,8 @@ capital_df["Equity"] = capital_df["Value_Share"] + capital_df["Value_Reserves"]
 
 latest = capital_df.sort_values("Year").iloc[-1]
 
-# 🔥 SMALLER + CLEAN PIE
-fig, ax = plt.subplots(figsize=(3, 3))  # 👈 reduced size
+# Pie
+fig, ax = plt.subplots(figsize=(3, 3)) 
 
 wedges, texts, autotexts = ax.pie(
     [latest["Equity"], latest["Borrowings"]],
@@ -195,7 +195,7 @@ wedges, texts, autotexts = ax.pie(
     autopct='%1.1f%%',
     startangle=90,
     colors=['#4C72B0', '#DD8452'],
-    textprops={'fontsize': 8},   # 👈 smaller text
+    textprops={'fontsize': 8}, 
     pctdistance=0.7
 )
 
