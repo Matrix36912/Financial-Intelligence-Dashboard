@@ -1,0 +1,123 @@
+import balance_cashflow_analysis as analysis
+
+html_content = """
+<html>
+<head>
+<title>Financial Analysis Report</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 20px;
+    background-color: #f4f6f8;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+/* 🔥 ONLY CHANGE → PIE SMALL */
+.small-pie {
+    width: 70% !important;
+    display: block;
+    margin: auto;
+}
+
+.insight {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #444;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Financial Statement Analysis</h1>
+
+<div class="section grid">
+
+<div class="card">
+<h3>Working Capital</h3>
+<img src="wc_chart.png">
+<p class="insight">
+Working capital shows steady growth driven by inventory and receivables.
+Fluctuations indicate changes in operational efficiency and liquidity management.
+</p>
+</div>
+
+<div class="card">
+<h3>Cash Flow</h3>
+<img src="cashflow_chart.png">
+<p class="insight">
+Operating cash flow remains the primary contributor, while investing flows indicate capital allocation decisions.
+Variability in financing suggests changes in funding strategy.
+</p>
+</div>
+
+</div>
+
+
+<div class="section grid">
+
+<div class="card">
+<h3>Capital Structure</h3>
+<img src="capital_chart.png" class="small-pie">  <!-- 👈 ONLY CHANGE -->
+<p class="insight">
+The company is largely equity-funded with minimal reliance on debt, indicating a conservative financial structure and lower risk exposure.
+</p>
+</div>
+
+<div class="card">
+<h3>Asset Efficiency</h3>
+<img src="asset_chart.png">
+<p class="insight">
+Net Block shows growth until 2024 followed by a sharp decline in 2025, indicating possible asset disposal or restructuring.
+Depreciation trends suggest active utilization of assets.
+</p>
+</div>
+
+</div>
+
+
+<div class="section card">
+<h3>Cash Flow Forecast (Next 2 Years)</h3>
+
+<p class="insight">
+Based on historical trends, operating cash flow is expected to remain stable with gradual growth.
+Investing cash flow may continue to fluctuate depending on capital expenditure decisions,
+while financing activity is likely to remain controlled.
+</p>
+
+</div>
+
+</body>
+</html>
+"""
+with open("financial_report.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print("Advanced report generated!")
