@@ -16,7 +16,7 @@ This solution analyzes key financial areas:
 It generates a **fully interactive HTML dashboard** used for business insights and strategic decisions.
 
 ## Dashboard Preview
-![Dashboard Preview](Financial Intelligence Dashboard.png)
+![Dashboard Preview](Financial%20Intelligence%20Dashboard.png)
 
 ## Key Features
 
@@ -65,8 +65,7 @@ The project generates:
 - Business insights for decision-making
 
 ## Live Dashboard
-
- [View Interactive Dashboard](https://matrix36912.github.io/Financial-Intelligence-Dashboard/)
+ [View Interactive Dashboard](https://matrix36912.github.io/Financial-Intelligence-Dashboard/index.html)
 
 ## Business Value
 
