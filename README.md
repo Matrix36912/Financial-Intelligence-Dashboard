@@ -16,7 +16,7 @@ This solution analyzes key financial areas:
 It generates a **fully interactive HTML dashboard** used for business insights and strategic decisions.
 
 ## Dashboard Preview
-![Dashboard Preview](Financial-Intelligence-Dashboard.png)
+![Dashboard Preview](Financial Intelligence Dashboard.png)
 
 ## Key Features
 
