@@ -55,6 +55,23 @@ It generates a **fully interactive HTML dashboard** used for business insights a
 - **Frontend**: HTML, CSS, JavaScript
 - **Charts**: Chart.js
 
+## Why Exponential Smoothing (and not other models?)
+
+For this project, I chose Exponential Smoothing mainly because it fits well with the nature of financial data I was working with.
+
+Financial metrics like cash flow and working capital usually follow gradual trends over time, rather than very complex or random patterns. Exponential smoothing handles this really well by giving more importance to recent data while still considering past values.
+
+I did consider other approaches:
+
+ARIMA is powerful, but it requires additional steps like making the data stationary and tuning multiple parameters, which adds complexity without much practical benefit here.
+Linear regression is simple, but it doesn’t capture time-based patterns properly.
+ML models like Random Forest or XGBoost can handle complex relationships, but for structured financial time series, they felt unnecessary and harder to interpret.
+Deep learning (like LSTM) is even more complex and typically useful when patterns are highly non-linear, which wasn’t the case in this dataset.
+In comparison, Exponential Smoothing is:
+- Simple to implement
+- Reliable for short-term forecasting
+Overall, it provided a good balance between accuracy and practicality
+
 ## Output
 
 The project generates:
