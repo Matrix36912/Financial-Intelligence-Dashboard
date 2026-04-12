@@ -63,10 +63,10 @@ Financial metrics like cash flow and working capital usually follow gradual tren
 
 I did consider other approaches:
 
-ARIMA is powerful, but it requires additional steps like making the data stationary and tuning multiple parameters, which adds complexity without much practical benefit here.
-Linear regression is simple, but it doesn’t capture time-based patterns properly.
-ML models like Random Forest or XGBoost can handle complex relationships, but for structured financial time series, they felt unnecessary and harder to interpret.
-Deep learning (like LSTM) is even more complex and typically useful when patterns are highly non-linear, which wasn’t the case in this dataset.
+**ARIMA** is powerful, but it requires additional steps like making the data stationary and tuning multiple parameters, which adds complexity without much practical benefit here.
+**Linear regression** is simple, but it doesn’t capture time-based patterns properly.
+ML models like **Random Forest or XGBoost** can handle complex relationships, but for structured financial time series, they felt unnecessary and harder to interpret.
+**Deep learning (like LSTM)** is even more complex and typically useful when patterns are highly non-linear, which wasn’t the case in this dataset.
 In comparison, Exponential Smoothing is:
 - Simple to implement
 - Reliable for short-term forecasting
