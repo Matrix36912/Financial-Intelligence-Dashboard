@@ -76,11 +76,3 @@ This solution can be used by:
 
 It bridges the gap between **raw financial data into actionable insights**
 
-## Future Enhancements
-
-- AI-generated financial insights (LLM-based)
-- Anomaly detection in financial trends
-- Industry benchmarking
-- Real-time data integration (APIs)
-
----
