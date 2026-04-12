@@ -90,6 +90,19 @@ This solution can be used by:
 - Finance teams for performance analysis
 - Business analysts for decision support
 - Leadership for strategic planning
-
+  
 It bridges the gap between **raw financial data into actionable insights**
+
+- ## Installation
+
+Clone the repository and install dependencies:
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the project
+python run.py
+
+# Open the dashboard
+# Open this file in your browser:
+index.html
 
