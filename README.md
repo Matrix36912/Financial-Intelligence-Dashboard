@@ -94,15 +94,8 @@ This solution can be used by:
 It bridges the gap between **raw financial data into actionable insights**
 
 - ## Installation
-
 Clone the repository and install dependencies:
-# Install dependencies
+```bash
 pip install -r requirements.txt
-
-# Run the project
 python run.py
-
-# Open the dashboard
-# Open this file in your browser:
-index.html
 
